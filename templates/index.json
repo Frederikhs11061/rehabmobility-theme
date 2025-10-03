@@ -1,6 +1,7 @@
 {
   "sections": {
-    "hero": { "type": "rehab-hero" }
+    "hero": { "type": "rehab-hero" },
+    "services": { "type": "rehab-services" }
   },
-  "order": ["hero"]
+  "order": ["hero", "services"]
 }
