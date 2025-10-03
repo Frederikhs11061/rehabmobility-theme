@@ -1,6 +1,6 @@
 {
   "sections": {
-    "main": { "type": "z-test", "settings": {} }
+    "main": { "type": "rehab-onepage", "settings": {} }
   },
   "order": ["main"]
 }
