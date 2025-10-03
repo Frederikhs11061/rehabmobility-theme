@@ -7,21 +7,19 @@
 
     <div class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {% for block in section.blocks %}
-        <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
-          <div class="p-6">
-            <div class="flex items-center">
-              <div class="flex-shrink-0 bg-blue-100 rounded-md p-3">
-                <i data-feather="{{ block.settings.icon | default: 'circle' }}" class="h-6 w-6 text-blue-600"></i>
-              </div>
-              <h3 class="ml-5 text-lg font-medium text-gray-900">{{ block.settings.title }}</h3>
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 bg-blue-100 rounded-md p-3">
+              <i data-feather="{{ block.settings.icon | default: 'circle' }}" class="h-6 w-6 text-blue-600"></i>
             </div>
-            <p class="mt-2 text-sm text-gray-500">{{ block.settings.text }}</p>
-            {% if block.settings.link_label != blank and block.settings.link_url != blank %}
-              <div class="mt-6">
-                <a href="{{ block.settings.link_url }}" class="text-sm font-medium text-blue-600 hover:text-blue-500">{{ block.settings.link_label }} →</a>
-              </div>
-            {% endif %}
+            <h3 class="ml-5 text-lg font-medium text-gray-900">{{ block.settings.title }}</h3>
           </div>
+          <p class="mt-2 text-sm text-gray-500">{{ block.settings.text }}</p>
+          {% if block.settings.link_label and block.settings.link_url %}
+            <div class="mt-6">
+              <a href="{{ block.settings.link_url }}" class="text-sm font-medium text-blue-600 hover:text-blue-500">{{ block.settings.link_label }} →</a>
+            </div>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
