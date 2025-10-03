@@ -8,3 +8,5 @@
 }
 "testimonials": { "type": "rehab-testimonials" }
 "contact": { "type": "rehab-contact-map" }
+"footer": { "type": "rehab-footer" }
+"header": { "type": "rehab-header" } og læg "header" først i "order".
