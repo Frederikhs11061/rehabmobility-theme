@@ -1,6 +1,6 @@
-{
-  "sections": {
-    "main": { "type": "rehab-onepage", "settings": {} }
-  },
-  "order": ["main"]
-}
+[
+  {
+    "name": "Theme settings",
+    "settings": []
+  }
+]
