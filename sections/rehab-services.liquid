@@ -1,42 +1,54 @@
 <section class="py-12 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="lg:text-center">
-      <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Vores tilbud</h2>
-      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-        Komplekse løsninger til komplekse udfordringer
-      </p>
+      <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">{{ section.settings.kicker }}</h2>
+      <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{ section.settings.title }}</p>
     </div>
 
     <div class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {% assign cards = 
-        "[ 
-          {\"icon\":\"home\",\"title\":\"Kliniklejlighed\",\"text\":\"Mulighed for behandling og overnatning ved boostophold i Viborg.\"},
-          {\"icon\":\"shield\",\"title\":\"Fritvalgsordning\",\"text\":\"Godkendt til Fritvalgs ordningen på basal- og avanceret niveau indenfor neurologi.\"},
-          {\"icon\":\"users\",\"title\":\"Foreningen VI KAN!\",\"text\":\"Fællesskab gennem rehabiliterende træning og sociale aktiviteter.\"},
-          {\"icon\":\"monitor\",\"title\":\"Online konsultationer\",\"text\":\"Fleksible konsultationer fra hvor som helst.\"},
-          {\"icon\":\"activity\",\"title\":\"Styrketræning\",\"text\":\"Special designede robottræningsmaskiner til optimal genoptræning.\"},
-          {\"icon\":\"heart\",\"title\":\"Bækkenbundstræning\",\"text\":\"Med el-stimulation og afspænding for både mænd og kvinder.\"}
-        ]" | parse_json 
-      %}
-      {% for c in cards %}
-      <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
-        <div class="p-6">
-          <div class="flex items-center">
-            <div class="flex-shrink-0 bg-blue-100 rounded-md p-3">
-              <i data-feather="{{ c.icon }}" class="h-6 w-6 text-blue-600"></i>
+      {% for block in section.blocks %}
+        <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+          <div class="p-6">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 bg-blue-100 rounded-md p-3">
+                <i data-feather="{{ block.settings.icon | default: 'circle' }}" class="h-6 w-6 text-blue-600"></i>
+              </div>
+              <h3 class="ml-5 text-lg font-medium text-gray-900">{{ block.settings.title }}</h3>
             </div>
-            <h3 class="ml-5 text-lg font-medium text-gray-900">{{ c.title }}</h3>
-          </div>
-          <p class="mt-2 text-sm text-gray-500">{{ c.text }}</p>
-          <div class="mt-6">
-            <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-500">Læs mere →</a>
+            <p class="mt-2 text-sm text-gray-500">{{ block.settings.text }}</p>
+            {% if block.settings.link_label != blank and block.settings.link_url != blank %}
+              <div class="mt-6">
+                <a href="{{ block.settings.link_url }}" class="text-sm font-medium text-blue-600 hover:text-blue-500">{{ block.settings.link_label }} →</a>
+              </div>
+            {% endif %}
           </div>
         </div>
-      </div>
       {% endfor %}
     </div>
   </div>
 </section>
+
 {% schema %}
-{ "name": "Rehab Services", "settings": [] }
+{
+  "name": "Rehab Services",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Overlinje", "default": "Vores tilbud" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Komplekse løsninger til komplekse udfordringer" }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Feather ikon-navn", "default": "home" },
+        { "type": "text", "id": "title", "label": "Titel", "default": "Kliniklejlighed" },
+        { "type": "textarea", "id": "text", "label": "Tekst", "default": "Mulighed for behandling og overnatning ved boostophold i Viborg." },
+        { "type": "text", "id": "link_label", "label": "Link label", "default": "Læs mere" },
+        { "type": "url", "id": "link_url", "label": "Link URL", "default": "#" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [{ "name": "Rehab Services", "blocks": [{ "type": "service" }, { "type": "service" }, { "type": "service" }] }]
+}
 {% endschema %}
