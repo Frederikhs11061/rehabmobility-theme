@@ -2,38 +2,16 @@
 <html lang="da">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <title>{{ page_title }}{% if current_tags %} – {{ current_tags | join: ", " }}{% endif %}{% if current_page != 1 %} – Side {{ current_page }}{% endif %}{% if shop.name %} – {{ shop.name }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }} – {{ shop.name }}</title>
     {{ content_for_header }}
-
-    <!-- Tailwind (hurtig start; byg til assets for produktion) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Feather icons -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-    <!-- Egen CSS (valgfrit) -->
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-      body { font-family: 'Montserrat', sans-serif; scroll-behavior:smooth; }
-      .hero-gradient { background: linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%); }
-      .service-card:hover { transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
-      .nav-link{position:relative}
-      .nav-link:after{content:'';position:absolute;width:0;height:2px;bottom:-2px;left:0;background:#3b82f6;transition:width .3s}
-      .nav-link:hover:after{width:100%}
-    </style>
   </head>
-  <body class="bg-gray-50">
-<div style="position:fixed;bottom:8px;right:8px;background:#eee;padding:6px 10px;font:12px/1.2 system-ui;">
-  theme.liquid loaded
-</div>
-    {{ content_for_layout }}
-
-    <script>
-      if (window.feather) feather.replace();
-    </script>
+  <body>
+    <div style="position:fixed;bottom:8px;right:8px;background:#eee;padding:6px 10px;font:12px/1.2 system-ui;z-index:9999;">
+      theme.liquid loaded
+    </div>
+    <main>
+      {{ content_for_layout }}
+    </main>
   </body>
 </html>
