@@ -7,3 +7,4 @@
   "order": ["hero", "services", "cta"]
 }
 "testimonials": { "type": "rehab-testimonials" }
+"contact": { "type": "rehab-contact-map" }
