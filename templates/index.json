@@ -1,6 +1,6 @@
-[
-  {
-    "name": "Theme settings",
-    "settings": []
-  }
-]
+{
+  "sections": {
+    "main": { "type": "z-test", "settings": {} }
+  },
+  "order": ["main"]
+}
