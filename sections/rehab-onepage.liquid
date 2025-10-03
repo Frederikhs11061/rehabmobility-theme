@@ -1,0 +1,212 @@
+<section>
+
+  <!-- HERO -->
+  <div class="hero-gradient">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900">
+        <span class="block">{{ section.settings.h1 }}</span>
+        <span class="block text-blue-600">{{ section.settings.h2 }}</span>
+      </h1>
+      <p class="mt-3 max-w-3xl mx-auto text-gray-600 md:text-xl">{{ section.settings.subtext }}</p>
+      <div class="mt-6">
+        {% if section.settings.btn1_label and section.settings.btn1_link %}
+          <a href="{{ section.settings.btn1_link }}" class="inline-flex items-center px-8 py-3 rounded-md text-white bg-blue-600 hover:bg-blue-700">
+            <i data-feather="mail" class="mr-2"></i>{{ section.settings.btn1_label }}
+          </a>
+        {% endif %}
+        {% if section.settings.btn2_label and section.settings.btn2_link %}
+          <a href="{{ section.settings.btn2_link }}" class="ml-3 inline-flex items-center px-8 py-3 rounded-md text-blue-600 bg-white hover:bg-gray-50">
+            <i data-feather="phone" class="mr-2"></i>{{ section.settings.btn2_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:text-center">
+        <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">{{ section.settings.services_kicker }}</h2>
+        <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{ section.settings.services_title }}</p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {% for block in section.blocks %}
+          {% if block.type == 'service' %}
+            <div class="bg-white rounded-lg shadow p-6">
+              <div class="flex items-center">
+                <div class="flex-shrink-0 bg-blue-100 rounded-md p-3">
+                  <i data-feather="{{ block.settings.icon | default: 'circle' }}" class="h-6 w-6 text-blue-600"></i>
+                </div>
+                <h3 class="ml-5 text-lg font-medium text-gray-900">{{ block.settings.title }}</h3>
+              </div>
+              <p class="mt-2 text-sm text-gray-500">{{ block.settings.text }}</p>
+              {% if block.settings.link_label and block.settings.link_url %}
+                <div class="mt-6"><a href="{{ block.settings.link_url }}" class="text-sm font-medium text-blue-600 hover:text-blue-500">{{ block.settings.link_label }} →</a></div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="bg-blue-700">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+      <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <span class="block">{{ section.settings.cta_title }}</span>
+        <span class="block text-blue-200">{{ section.settings.cta_subtitle }}</span>
+      </h2>
+      <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+        {% if section.settings.cta_btn1_label and section.settings.cta_btn1_link %}
+          <a href="{{ section.settings.cta_btn1_link }}" class="inline-flex items-center justify-center px-5 py-3 rounded-md text-blue-600 bg-white hover:bg-blue-50"><i data-feather="mail" class="mr-2"></i>{{ section.settings.cta_btn1_label }}</a>
+        {% endif %}
+        {% if section.settings.cta_btn2_label and section.settings.cta_btn2_link %}
+          <a href="{{ section.settings.cta_btn2_link }}" class="ml-3 inline-flex items-center justify-center px-5 py-3 rounded-md text-white bg-blue-600 bg-opacity-60 hover:bg-opacity-70"><i data-feather="phone" class="mr-2"></i>{{ section.settings.cta_btn2_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:text-center">
+        <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">{{ section.settings.test_kicker }}</h2>
+        <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{ section.settings.test_title }}</p>
+      </div>
+      <div class="mt-10 grid gap-8 md:grid-cols-2">
+        {% for block in section.blocks %}
+          {% if block.type == 'testimonial' %}
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="flex items-start">
+                {% if block.settings.avatar %}
+                  <img class="h-12 w-12 rounded-full" src="{{ block.settings.avatar | image_url: width: 96 }}" alt="{{ block.settings.name }}">
+                {% endif %}
+                <div class="ml-4">
+                  <div class="text-lg font-medium text-gray-900">{{ block.settings.name }}</div>
+                  <p class="mt-1 text-gray-500">{{ block.settings.quote }}</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT + MAP -->
+  <div class="bg-white">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+      <div class="relative bg-gray-900 rounded-lg shadow-xl overflow-hidden">
+        <div class="absolute inset-0">
+          <iframe class="w-full h-full" src="{{ section.settings.map_embed | default: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2170.127021040302!2d9.40284331592838!3d56.44978098087275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c1f5d6a1e3a9d%3A0x1e3c4d1e3c4d1e3c!2sBrovej%2020%2C%208800%20Viborg!5e0!3m2!1sen!2sdk!4v1620000000000!5m2!1sen!2sdk' }}" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="relative bg-gray-900 bg-opacity-75 py-16 px-6 sm:py-20 sm:px-12 lg:px-16">
+          <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">{{ section.settings.contact_heading }}</h2>
+            <p class="mt-3 text-xl text-blue-200">{{ section.settings.address }}</p>
+            <div class="mt-8 flex justify-center gap-4">
+              {% if section.settings.phone %}<a href="tel:{{ section.settings.phone | strip }}" class="px-5 py-3 rounded-md text-blue-700 bg-white hover:bg-blue-50"><i data-feather="phone" class="mr-2"></i>{{ section.settings.phone }}</a>{% endif %}
+              {% if section.settings.email %}<a href="mailto:{{ section.settings.email }}" class="px-5 py-3 rounded-md text-white bg-blue-600 hover:bg-blue-700"><i data-feather="mail" class="mr-2"></i>E-mail</a>{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">{{ section.settings.brand_title }}</h3>
+          <p class="mt-4 text-base text-gray-300">{{ section.settings.brand_text }}</p>
+          <div class="mt-4 flex space-x-6">
+            {% if section.settings.facebook_url %}<a href="{{ section.settings.facebook_url }}" class="text-gray-400 hover:text-gray-300"><i data-feather="facebook" class="h-6 w-6"></i></a>{% endif %}
+            {% if section.settings.linkedin_url %}<a href="{{ section.settings.linkedin_url }}" class="text-gray-400 hover:text-gray-300"><i data-feather="linkedin" class="h-6 w-6"></i></a>{% endif %}
+          </div>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Kontakt</h3>
+          <ul class="mt-4 space-y-2">
+            {% if section.settings.phone %}<li><a href="tel:{{ section.settings.phone | strip }}" class="text-base text-gray-300 hover:text-white"><i data-feather="phone" class="inline mr-2"></i>{{ section.settings.phone }}</a></li>{% endif %}
+            {% if section.settings.email %}<li><a href="mailto:{{ section.settings.email }}" class="text-base text-gray-300 hover:text-white"><i data-feather="mail" class="inline mr-2"></i>{{ section.settings.email }}</a></li>{% endif %}
+            {% if section.settings.address %}<li class="text-base text-gray-300"><i data-feather="map-pin" class="inline mr-2"></i>{{ section.settings.address }}</li>{% endif %}
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Information</h3>
+          <ul class="mt-4 space-y-2">
+            {% for i in (1..4) %}
+              {% assign field = 'info_' | append: i %}
+              {% if section.settings[field] %}<li class="text-base text-gray-300">{{ section.settings[field] }}</li>{% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-gray-700 pt-8">
+        <p class="text-base text-gray-400 text-center">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Alle rettigheder forbeholdes.</p>
+      </div>
+    </div>
+  </footer>
+
+</section>
+
+{% schema %}
+{
+  "name": "Rehab One‑Page",
+  "settings": [
+    { "type": "text", "id": "h1", "label": "Hero: Overskrift 1", "default": "Specialiseret Neurorehabilitering" },
+    { "type": "text", "id": "h2", "label": "Hero: Overskrift 2", "default": "Skræddersyet til dine behov" },
+    { "type": "textarea", "id": "subtext", "label": "Hero: Undertekst", "default": "Professionel genoptræning og behandling for at forbedre livskvaliteten." },
+    { "type": "text", "id": "btn1_label", "label": "Hero: Primær knap tekst", "default": "Kontakt os" },
+    { "type": "url", "id": "btn1_link", "label": "Hero: Primær knap link", "default": "mailto:helena@rehabmobility.dk" },
+    { "type": "text", "id": "btn2_label", "label": "Hero: Sekundær knap tekst", "default": "41 41 90 70" },
+    { "type": "url", "id": "btn2_link", "label": "Hero: Sekundær knap link", "default": "tel:41419070" },
+
+    { "type": "text", "id": "services_kicker", "label": "Services: Overlinje", "default": "Vores tilbud" },
+    { "type": "text", "id": "services_title", "label": "Services: Titel", "default": "Komplekse løsninger til komplekse udfordringer" },
+
+    { "type": "text", "id": "cta_title", "label": "CTA: Titel", "default": "Klar til at starte din rejse?" },
+    { "type": "text", "id": "cta_subtitle", "label": "CTA: Underlinje", "default": "Book en GRATIS forundersøgelse i dag." },
+    { "type": "text", "id": "cta_btn1_label", "label": "CTA: Knap 1 label", "default": "Send en besked" },
+    { "type": "url", "id": "cta_btn1_link", "label": "CTA: Knap 1 link", "default": "mailto:helena@rehabmobility.dk" },
+    { "type": "text", "id": "cta_btn2_label", "label": "CTA: Knap 2 label", "default": "Ring til os" },
+    { "type": "url", "id": "cta_btn2_link", "label": "CTA: Knap 2 link", "default": "tel:41419070" },
+
+    { "type": "text", "id": "contact_heading", "label": "Kontakt: Overskrift", "default": "Besøg os i Viborg" },
+    { "type": "text", "id": "address", "label": "Kontakt: Adresse", "default": "Brovej 20, 8800 Viborg" },
+    { "type": "text", "id": "phone", "label": "Kontakt: Telefon", "default": "41 41 90 70" },
+    { "type": "text", "id": "email", "label": "Kontakt: E‑mail", "default": "helena@rehabmobility.dk" },
+    { "type": "textarea", "id": "map_embed", "label": "Google Maps embed URL" },
+
+    { "type": "text", "id": "brand_title", "label": "Footer: Brand titel", "default": "RehabMobility" },
+    { "type": "textarea", "id": "brand_text", "label": "Footer: Brand tekst", "default": "Specialiseret neurorehabilitering med fokus på individuelle løsninger." },
+    { "type": "url", "id": "facebook_url", "label": "Footer: Facebook URL" },
+    { "type": "url", "id": "linkedin_url", "label": "Footer: LinkedIn URL" },
+    { "type": "text", "id": "info_1", "label": "Footer: Info 1", "default": "CVR: 40011722" },
+    { "type": "text", "id": "info_2", "label": "Footer: Info 2", "default": "Andelskassen" },
+    { "type": "text", "id": "info_3", "label": "Footer: Info 3", "default": "Reg. Nr. 5967" },
+    { "type": "text", "id": "info_4", "label": "Footer: Info 4", "default": "Konto nr. 0008083730" }
+  ],
+  "blocks": [
+    { "type": "service", "name": "Service", "settings": [
+      { "type": "text", "id": "icon", "label": "Feather ikon-navn", "default": "home" },
+      { "type": "text", "id": "title", "label": "Titel", "default": "Kliniklejlighed" },
+      { "type": "textarea", "id": "text", "label": "Tekst", "default": "Mulighed for behandling og overnatning ved boostophold i Viborg." },
+      { "type": "text", "id": "link_label", "label": "Link label", "default": "Læs mere" },
+      { "type": "url", "id": "link_url", "label": "Link URL", "default": "#" }
+    ]},
+    { "type": "testimonial", "name": "Omtale", "settings": [
+      { "type": "image_picker", "id": "avatar", "label": "Avatar" },
+      { "type": "text", "id": "name", "label": "Navn", "default": "Mette K." },
+      { "type": "textarea", "id": "quote", "label": "Citat", "default": "Fantastisk forløb – jeg har fået min mobilitet tilbage." }
+    ]}
+  ],
+  "presets": [{ "name": "Rehab One‑Page" }]
+}
+{% endschema %}
