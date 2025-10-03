@@ -1,37 +1,21 @@
 <section class="hero-gradient">
   <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900">
-      <span class="block">{{ section.settings.h1 }}</span>
-      <span class="block text-blue-600">{{ section.settings.h2 }}</span>
+      <span class="block">Specialiseret Neurorehabilitering</span>
+      <span class="block text-blue-600">Skræddersyet til dine behov</span>
     </h1>
-    <p class="mt-3 max-w-3xl mx-auto text-gray-600 md:text-xl">{{ section.settings.subtext }}</p>
+    <p class="mt-3 max-w-3xl mx-auto text-gray-600 md:text-xl">
+      Professionel genoptræning og behandling for at forbedre livskvaliteten.
+    </p>
     <div class="mt-6">
-      {% if section.settings.btn1_label != blank and section.settings.btn1_link != blank %}
-        <a href="{{ section.settings.btn1_link }}" class="inline-flex items-center px-8 py-3 rounded-md text-white bg-blue-600 hover:bg-blue-700">
-          <i data-feather="mail" class="mr-2"></i> {{ section.settings.btn1_label }}
-        </a>
-      {% endif %}
-      {% if section.settings.btn2_label != blank and section.settings.btn2_link != blank %}
-        <a href="{{ section.settings.btn2_link }}" class="ml-3 inline-flex items-center px-8 py-3 rounded-md text-blue-600 bg-white hover:bg-gray-50">
-          <i data-feather="phone" class="mr-2"></i> {{ section.settings.btn2_label }}
-        </a>
-      {% endif %}
+      <a href="mailto:helena@rehabmobility.dk" class="inline-flex items-center px-8 py-3 rounded-md text-white bg-blue-600 hover:bg-blue-700">
+        <i data-feather="mail" class="mr-2"></i> Kontakt os
+      </a>
+      <a href="tel:41419070" class="ml-3 inline-flex items-center px-8 py-3 rounded-md text-blue-600 bg-white hover:bg-gray-50">
+        <i data-feather="phone" class="mr-2"></i> 41 41 90 70
+      </a>
     </div>
   </div>
 </section>
 
-{% schema %}
-{
-  "name": "Rehab Hero",
-  "settings": [
-    { "type": "text", "id": "h1", "label": "Overskrift linje 1", "default": "Specialiseret Neurorehabilitering" },
-    { "type": "text", "id": "h2", "label": "Overskrift linje 2 (farvet)", "default": "Skræddersyet til dine behov" },
-    { "type": "textarea", "id": "subtext", "label": "Undertekst", "default": "Professionel genoptræning og behandling for at forbedre livskvaliteten." },
-    { "type": "text", "id": "btn1_label", "label": "Primær knap tekst", "default": "Kontakt os" },
-    { "type": "url", "id": "btn1_link", "label": "Primær knap link", "default": "mailto:helena@rehabmobility.dk" },
-    { "type": "text", "id": "btn2_label", "label": "Sekundær knap tekst", "default": "41 41 90 70" },
-    { "type": "url", "id": "btn2_link", "label": "Sekundær knap link", "default": "tel:41419070" }
-  ],
-  "presets": [{ "name": "Rehab Hero" }]
-}
-{% endschema %}
+{% schema %}{ "name": "Rehab Hero", "settings": [] }{% endschema %}

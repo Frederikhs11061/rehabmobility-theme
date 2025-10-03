@@ -1,12 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "header": { "type": "rehab-header" },
-    "hero": { "type": "rehab-hero" },
-    "services": { "type": "rehab-services" },
-    "cta": { "type": "rehab-cta" },
-    "testimonials": { "type": "rehab-testimonials" },
-    "contact": { "type": "rehab-contact-map" },
-    "footer": { "type": "rehab-footer" }
+    "hero": {
+      "type": "rehab-hero",
+      "settings": {}
+    },
+    "rehab_testimonials_mEby9R": {
+      "type": "rehab-testimonials",
+      "blocks": {
+        "testimonial_NYw3mY": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Mette K.",
+            "quote": "Fantastisk forløb – jeg har fået min mobilitet tilbage."
+          }
+        },
+        "testimonial_7FGLkn": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Mette K.",
+            "quote": "Fantastisk forløb – jeg har fået min mobilitet tilbage."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_NYw3mY",
+        "testimonial_7FGLkn"
+      ],
+      "name": "Rehab Testimonials",
+      "settings": {
+        "kicker": "Klienters oplevelser",
+        "title": "Hvad siger vores klienter?"
+      }
+    },
+    "rehab_footer_YBwL4k": {
+      "type": "rehab-footer",
+      "name": "Rehab Footer",
+      "settings": {
+        "brand_title": "RehabMobility",
+        "brand_text": "Specialiseret neurorehabilitering med fokus på individuelle løsninger.",
+        "phone": "41 41 90 70",
+        "email": "helena@rehabmobility.dk",
+        "address": "Brovej 20, 8800 Viborg",
+        "info_1": "CVR: 40011722",
+        "info_2": "Andelskassen",
+        "info_3": "Reg. Nr. 5967",
+        "info_4": "Konto nr. 0008083730",
+        "facebook_url": "",
+        "linkedin_url": ""
+      }
+    }
   },
-  "order": ["header", "hero", "services", "cta", "testimonials", "contact", "footer"]
+  "order": [
+    "hero",
+    "rehab_testimonials_mEby9R",
+    "rehab_footer_YBwL4k"
+  ]
 }
