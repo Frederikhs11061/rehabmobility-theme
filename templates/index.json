@@ -1,23 +1,144 @@
-"rehab_services_XYZ123": {
-  "type": "rehab-services",
-  "name": "Rehab Services",
-  "settings": {
-    "kicker": "Vores tilbud",
-    "title": "Komplekse løsninger til komplekse udfordringer"
-  },
-  "blocks": {
-    "service_1": {
-      "type": "service",
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "rehab-hero",
+      "settings": {}
+    },
+
+    "rehab_services_A1": {
+      "type": "rehab-services",
+      "name": "Rehab Services",
       "settings": {
-        "icon": "home",
-        "title": "Kliniklejlighed",
-        "text": "Mulighed for behandling og overnatning ved boostophold i Viborg.",
-        "link_label": "Læs mere",
-        "link_url": "#"
+        "kicker": "Vores tilbud",
+        "title": "Komplekse løsninger til komplekse udfordringer"
+      },
+      "blocks": {
+        "service_1": {
+          "type": "service",
+          "settings": {
+            "icon": "home",
+            "title": "Kliniklejlighed",
+            "text": "Mulighed for behandling og overnatning ved boostophold i Viborg.",
+            "link_label": "Læs mere",
+            "link_url": "#"
+          }
+        },
+        "service_2": {
+          "type": "service",
+          "settings": {
+            "icon": "shield",
+            "title": "Fritvalgsordning",
+            "text": "Godkendt til Fritvalgs ordningen på basal- og avanceret niveau indenfor neurologi.",
+            "link_label": "Læs mere",
+            "link_url": "#"
+          }
+        },
+        "service_3": {
+          "type": "service",
+          "settings": {
+            "icon": "users",
+            "title": "Foreningen VI KAN!",
+            "text": "Fællesskab gennem rehabiliterende træning og sociale aktiviteter.",
+            "link_label": "Læs mere",
+            "link_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "service_1",
+        "service_2",
+        "service_3"
+      ]
+    },
+
+    "rehab_cta_B1": {
+      "type": "rehab-cta",
+      "name": "Rehab CTA",
+      "settings": {
+        "title": "Klar til at starte din rejse?",
+        "subtitle": "Book en GRATIS forundersøgelse i dag.",
+        "btn1_label": "Send en besked",
+        "btn1_link": "mailto:helena@rehabmobility.dk",
+        "btn2_label": "Ring til os",
+        "btn2_link": "tel:41419070"
+      }
+    },
+
+    "rehab_testimonials_mEby9R": {
+      "type": "rehab-testimonials",
+      "blocks": {
+        "testimonial_NYw3mY": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Mette K.",
+            "quote": "Fantastisk forløb – jeg har fået min mobilitet tilbage."
+          }
+        },
+        "testimonial_7FGLkn": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Mette K.",
+            "quote": "Fantastisk forløb – jeg har fået min mobilitet tilbage."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_NYw3mY",
+        "testimonial_7FGLkn"
+      ],
+      "name": "Rehab Testimonials",
+      "settings": {
+        "kicker": "Klienters oplevelser",
+        "title": "Hvad siger vores klienter?"
+      }
+    },
+
+    "rehab_contact_map_C1": {
+      "type": "rehab-contact-map",
+      "name": "Rehab Contact + Map",
+      "settings": {
+        "heading": "Besøg os i Viborg",
+        "address": "Brovej 20, 8800 Viborg",
+        "phone": "41 41 90 70",
+        "email": "helena@rehabmobility.dk",
+        "map_embed": ""
+      }
+    },
+
+    "rehab_footer_YBwL4k": {
+      "type": "rehab-footer",
+      "name": "Rehab Footer",
+      "settings": {
+        "brand_title": "RehabMobility",
+        "brand_text": "Specialiseret neurorehabilitering med fokus på individuelle løsninger.",
+        "phone": "41 41 90 70",
+        "email": "helena@rehabmobility.dk",
+        "address": "Brovej 20, 8800 Viborg",
+        "info_1": "CVR: 40011722",
+        "info_2": "Andelskassen",
+        "info_3": "Reg. Nr. 5967",
+        "info_4": "Konto nr. 0008083730",
+        "facebook_url": "",
+        "linkedin_url": ""
       }
     }
   },
-  "block_order": [
-    "service_1"
+
+  "order": [
+    "hero",
+    "rehab_services_A1",
+    "rehab_cta_B1",
+    "rehab_testimonials_mEby9R",
+    "rehab_contact_map_C1",
+    "rehab_footer_YBwL4k"
   ]
 }
