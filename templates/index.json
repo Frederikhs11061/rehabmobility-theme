@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "rehab-landing", "settings": {} }
+  },
+  "order": ["main"]
+}
