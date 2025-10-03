@@ -1,29 +1,6 @@
 {
   "sections": {
-    "header": { "type": "rehab-header", "settings": {} },
-    "hero":   { "type": "rehab-hero", "settings": {} },
-    "services": { "type": "rehab-services", "settings": {} },
-    "cta": { "type": "rehab-cta", "settings": {} },
-    "testimonials": {
-      "type": "rehab-testimonials",
-      "settings": { "kicker": "Klienters oplevelser", "title": "Hvad siger vores klienter?" },
-      "blocks": {
-        "t1": { "type": "testimonial", "settings": { "name": "Mette K.", "quote": "Fantastisk forløb – jeg har fået min mobilitet tilbage." } },
-        "t2": { "type": "testimonial", "settings": { "name": "Jens H.", "quote": "Professionelt og personligt – klare fremskridt." } }
-      },
-      "block_order": ["t1","t2"]
-    },
-    "contact": {
-      "type": "rehab-contact-map",
-      "settings": {
-        "heading": "Besøg os i Viborg",
-        "address": "Brovej 20, 8800 Viborg",
-        "phone": "41 41 90 70",
-        "email": "helena@rehabmobility.dk",
-        "map_embed": ""
-      }
-    },
-    "footer": { "type": "rehab-footer", "settings": {} }
+    "main": { "type": "rehab-onepage", "settings": {} }
   },
-  "order": ["header","hero","services","cta","testimonials","contact","footer"]
+  "order": ["main"]
 }
