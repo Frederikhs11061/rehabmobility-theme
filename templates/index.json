@@ -8,5 +8,13 @@
     "contact": { "type": "rehab-contact-map" },
     "footer": { "type": "rehab-footer" }
   },
-  "order": ["header", "hero", "services", "cta", "testimonials", "contact", "footer"]
+  "order": [
+    "header",
+    "hero",
+    "services",
+    "cta",
+    "testimonials",
+    "contact",
+    "footer"
+  ]
 }
