@@ -1,7 +1,8 @@
 {
   "sections": {
     "hero": { "type": "rehab-hero" },
-    "services": { "type": "rehab-services" }
+    "services": { "type": "rehab-services" },
+    "cta": { "type": "rehab-cta" }
   },
-  "order": ["hero", "services"]
+  "order": ["hero", "services", "cta"]
 }
