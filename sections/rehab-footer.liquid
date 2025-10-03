@@ -12,18 +12,18 @@
       <div>
         <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Kontakt</h3>
         <ul class="mt-4 space-y-2">
-          {% if section.settings.phone %}<li><a href="tel:{{ section.settings.phone | strip }}" class="text-base text-gray-300 hover:text-white"><i data-feather="phone" class="inline mr-2"></i> {{ section.settings.phone }}</a></li>{% endif %}
-          {% if section.settings.email %}<li><a href="mailto:{{ section.settings.email }}" class="text-base text-gray-300 hover:text-white"><i data-feather="mail" class="inline mr-2"></i> {{ section.settings.email }}</a></li>{% endif %}
-          {% if section.settings.address %}<li class="text-base text-gray-300"><i data-feather="map-pin" class="inline mr-2"></i> {{ section.settings.address }}</li>{% endif %}
+          {% if section.settings.phone %}<li><a href="tel:{{ section.settings.phone | strip }}" class="text-base text-gray-300 hover:text-white"><i data-feather="phone" class="inline mr-2"></i>{{ section.settings.phone }}</a></li>{% endif %}
+          {% if section.settings.email %}<li><a href="mailto:{{ section.settings.email }}" class="text-base text-gray-300 hover:text-white"><i data-feather="mail" class="inline mr-2"></i>{{ section.settings.email }}</a></li>{% endif %}
+          {% if section.settings.address %}<li class="text-base text-gray-300"><i data-feather="map-pin" class="inline mr-2"></i>{{ section.settings.address }}</li>{% endif %}
         </ul>
       </div>
       <div>
         <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Information</h3>
         <ul class="mt-4 space-y-2">
-          {% if section.settings.info_1 %}<li class="text-base text-gray-300">{{ section.settings.info_1 }}</li>{% endif %}
-          {% if section.settings.info_2 %}<li class="text-base text-gray-300">{{ section.settings.info_2 }}</li>{% endif %}
-          {% if section.settings.info_3 %}<li class="text-base text-gray-300">{{ section.settings.info_3 }}</li>{% endif %}
-          {% if section.settings.info_4 %}<li class="text-base text-gray-300">{{ section.settings.info_4 }}</li>{% endif %}
+          {% for i in (1..4) %}
+            {% assign field = 'info_' | append: i %}
+            {% if section.settings[field] %}<li class="text-base text-gray-300">{{ section.settings[field] }}</li>{% endif %}
+          {% endfor %}
         </ul>
       </div>
     </div>
@@ -49,6 +49,4 @@
     { "type": "url", "id": "facebook_url", "label": "Facebook URL" },
     { "type": "url", "id": "linkedin_url", "label": "LinkedIn URL" }
   ],
-  "presets": [{ "name": "Rehab Footer" }]
-}
-{% endschema %}
+  "presets": [{ "name
