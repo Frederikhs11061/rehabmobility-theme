@@ -1,20 +1,4 @@
 {
-  "sections": {
-    "header": { "type": "rehab-header" },
-    "hero": { "type": "rehab-hero" },
-    "services": { "type": "rehab-services" },
-    "cta": { "type": "rehab-cta" },
-    "testimonials": { "type": "rehab-testimonials" },
-    "contact": { "type": "rehab-contact-map" },
-    "footer": { "type": "rehab-footer" }
-  },
-  "order": [
-    "header",
-    "hero",
-    "services",
-    "cta",
-    "testimonials",
-    "contact",
-    "footer"
-  ]
+  "sections": { "hero": { "type": "rehab-hero" } },
+  "order": ["hero"]
 }
